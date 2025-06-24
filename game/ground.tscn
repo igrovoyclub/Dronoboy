@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxn854avvs522"]
+
+[ext_resource type="Texture2D" uid="uid://cndkeeiutalua" path="res://assets/bgElements_elements.svg" id="1_mxxnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtpaf"]
+size = Vector2(1922, 24)
+
+[node name="ground" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(959, 1196)
+shape = SubResource("RectangleShape2D_xtpaf")
+
+[node name="hill" type="Sprite2D" parent="."]
+self_modulate = Color(0.498039, 0.819608, 0.258824, 1)
+position = Vector2(960, 1168)
+scale = Vector2(1.91235, 0.610687)
+texture = ExtResource("1_mxxnj")
+region_enabled = true
+region_rect = Rect2(2111, 827.078, 1004.3, 131.946)

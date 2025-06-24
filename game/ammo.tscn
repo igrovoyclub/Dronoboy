@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvkp4bxjokinw"]
+
+[ext_resource type="Texture2D" uid="uid://csi4ixyn6jfuh" path="res://assets/vector_shootingGallery.svg" id="1_qv48t"]
+[ext_resource type="Script" uid="uid://chqx24yto0eyr" path="res://game/ammo.gd" id="1_xo200"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo200"]
+radius = 8.0
+height = 32.0
+
+[node name="ammo" type="RigidBody2D"]
+z_index = 2
+gravity_scale = -1.802
+script = ExtResource("1_xo200")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qv48t")
+region_enabled = true
+region_rect = Rect2(12.5566, 585.923, 20.8855, 43.4385)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xo200")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

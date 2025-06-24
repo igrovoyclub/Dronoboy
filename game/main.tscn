@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://pbypvfuersua"]
+
+[ext_resource type="PackedScene" uid="uid://dj8hsxsvqhtx6" path="res://game/drone_spawner.tscn" id="1_dgpao"]
+[ext_resource type="Texture2D" uid="uid://cndkeeiutalua" path="res://assets/bgElements_elements.svg" id="1_oa506"]
+[ext_resource type="PackedScene" uid="uid://dxn854avvs522" path="res://game/ground.tscn" id="2_5un7r"]
+[ext_resource type="PackedScene" uid="uid://cynt7rhnqcqpe" path="res://game/pumpgun.tscn" id="2_xtpaf"]
+[ext_resource type="Script" uid="uid://cyvde8pxvpxch" path="res://game/ground.gd" id="3_dgpao"]
+
+[node name="main" type="Node2D"]
+
+[node name="drone_spawner" parent="." node_paths=PackedStringArray("shotgun") instance=ExtResource("1_dgpao")]
+position = Vector2(-17, 0)
+shotgun = NodePath("../pumpgun")
+
+[node name="back" type="Sprite2D" parent="."]
+self_modulate = Color(0.752941, 1, 1, 1)
+position = Vector2(960, 604)
+scale = Vector2(1.87683, 1.17739)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(3323.34, 819.82, 1023.13, 1026.27)
+
+[node name="cloud" type="Sprite2D" parent="."]
+position = Vector2(960, 1080)
+scale = Vector2(1.91235, 1)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(2111.91, 1817.84, 1004.3, 251.074)
+
+[node name="small_clouds" type="Sprite2D" parent="."]
+self_modulate = Color(0.596078, 1, 1, 1)
+position = Vector2(459.25, 176)
+scale = Vector2(0.888543, 1)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(0, 160.75, 803.184, 138.091)
+
+[node name="small_clouds2" type="Sprite2D" parent="."]
+self_modulate = Color(0.658824, 1, 1, 1)
+position = Vector2(1472, 168)
+scale = Vector2(0.888543, 1)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(0, 160.75, 803.184, 138.091)
+
+[node name="small_clouds3" type="Sprite2D" parent="."]
+self_modulate = Color(0.8, 1, 1, 1)
+position = Vector2(984, 488)
+scale = Vector2(1.2909, 1)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(0, 3.82904, 652.539, 138.091)
+
+[node name="ground" parent="." instance=ExtResource("2_5un7r")]
+script = ExtResource("3_dgpao")
+
+[node name="tree1" type="Sprite2D" parent="."]
+position = Vector2(136, 1080)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(0, 769.606, 119.006, 238.521)
+
+[node name="tree2" type="Sprite2D" parent="."]
+position = Vector2(1195, 1078.5)
+scale = Vector2(0.58, 0.590226)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(188.052, 1020.68, 100.43, 266.766)
+
+[node name="tree3" type="Sprite2D" parent="."]
+position = Vector2(504, 1064)
+scale = Vector2(1.46, 1.01128)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(188.052, 1020.68, 100.43, 266.766)
+
+[node name="build1" type="Sprite2D" parent="."]
+position = Vector2(704, 1120)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(1973.82, 543.639, 172.614, 175.752)
+
+[node name="build2" type="Sprite2D" parent="."]
+position = Vector2(1680, 1136)
+texture = ExtResource("1_oa506")
+region_enabled = true
+region_rect = Rect2(1769.82, 600.131, 191.444, 119.26)
+
+[node name="pumpgun" parent="." node_paths=PackedStringArray("parent_scene") instance=ExtResource("2_xtpaf")]
+position = Vector2(964, 1251)
+parent_scene = NodePath("..")
